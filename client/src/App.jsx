@@ -1,21 +1,19 @@
-import { useState } from 'react';
-import LivroForm from './components/LivroForm';
-import LivroList from './components/LivroList';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Cadastro from './pages/Cadastro';
+import Editar from './pages/Editar';
 
-function App() {
-  const [livroEditando, setLivroEditando] = useState(null);
-  const [refresh, setRefresh] = useState(false);
-
+const App = () => {
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-5 bg-white rounded shadow">
-      <LivroForm
-        livroAtual={livroEditando}
-        limparEdicao={() => setLivroEditando(null)}
-        recarregar={() => setRefresh(!refresh)}
-      />
-      <LivroList onEdit={setLivroEditando} key={refresh} />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/editar/:id" element={<Editar />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
