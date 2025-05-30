@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://TRABALHO_FINAL_LPI/livros'
+  baseURL: 'https://trabalho-final-lpi.onrender.com/livros',
 });
 
 export default api;
