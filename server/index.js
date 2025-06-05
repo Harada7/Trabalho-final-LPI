@@ -1,9 +1,11 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
-const livrosRoutes = require('./routes/livrosRoutes.js');
+dotenv.config();
+
+import livrosRoutes from './routes/livrosRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;

@@ -11,6 +11,7 @@ export const getLivro = async (req, res) => {
 };
 
 export const createLivro = async (req, res) => {
+  console.log('Dados recebidos:', req.body);
   const novoLivro = new Livro(req.body);
   await novoLivro.save();
   res.status(201).json(novoLivro);
