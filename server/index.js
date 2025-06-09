@@ -16,8 +16,8 @@ app.use('/livros', livrosRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
-    app.listen(PORT, () =>
-      console.log(`🚀 Backend rodando na porta ${PORT}`)
-    );
+    app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Backend rodando na porta ${PORT}`);
+    });
   })
   .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
